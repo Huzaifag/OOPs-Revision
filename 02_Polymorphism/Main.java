@@ -18,6 +18,7 @@ Static Keywords:
 This Keyword:
 - Refers to the current object.
 - Used to return the current object from a method.
+- Used to call constructor from other constructor
 
 */
 
@@ -26,10 +27,13 @@ class Polymorphism {
   int age;
   static int count;
   
-  //constructor
+  //constructors
+  public Polymorphism(){
+    count++;
+    System.out.println("I am a constructor.");
+  }
   public Polymorphism(String name, int age){
-  count++;
-  System.out.println("I am a constructor.");
+  this(); //calling the upper constructor
   this.name = name;
   this.age = age;
   }
